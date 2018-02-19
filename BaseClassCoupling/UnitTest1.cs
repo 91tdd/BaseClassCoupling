@@ -56,7 +56,7 @@ namespace BaseClassCoupling
         }
     }
 
-    public class DebugHelper
+    public static class DebugHelper
     {
         public static void Info(string message)
         {
@@ -65,7 +65,7 @@ namespace BaseClassCoupling
         }
     }
 
-    public class SalaryRepo
+    public static class SalaryRepo
     {
         internal static decimal Get(int id)
         {
