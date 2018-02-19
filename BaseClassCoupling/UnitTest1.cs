@@ -41,6 +41,7 @@ namespace BaseClassCoupling
     {
         public override decimal GetYearlyBonus()
         {
+            DebugHelper.Info("--get yearly bonus--");
             var salary = this.GetMonthlySalary();
             DebugHelper.Info($"id:{Id}, his monthly salary is:{salary}");
             return Convert.ToDecimal(this.WorkingYear()) * salary;
@@ -48,7 +49,9 @@ namespace BaseClassCoupling
 
         private double WorkingYear()
         {
-            var year = (DateTime.Now - StartWorkingDate).TotalDays / 365;
+            DebugHelper.Info("--get working year--");
+
+            var year = Math.Round((DateTime.Now - StartWorkingDate).TotalDays / 365, 2);
             return year > 1 ? 1 : year;
         }
     }
